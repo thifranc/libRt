@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/16 09:50:53 by thifranc          #+#    #+#             */
-/*   Updated: 2016/02/20 16:29:44 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/12 15:39:04 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/12 16:14:45 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,69 +20,36 @@ static int	ft_nb_len(int n)
 		return (1 + ft_nb_len(n / 10));
 }
 
-static void	ft_print(char *out, int nb, int i)
+static int	ft_sign(int *n)
 {
-	int x;
-
-	x = 0;
-	if (i == 2)
-		nb++;
-	if (i == 1 || i == 2)
+	if (*n < 0)
 	{
-		out[x] = '-';
-		x++;
-		nb = -nb;
+		*n = -*n;
+		return (1);
 	}
-	while (nb != 0)
-	{
-		out[x] = nb % 10 + 48;
-		nb /= 10;
-		x++;
-	}
-	if (i == 2)
-		out[1] = '8';
-}
-
-static char	*ft_strrev_nb(int nb, int flag, char *out)
-{
-	int		i;
-	int		j;
-	char	back;
-
-	i = 0;
-	if (flag == 1 || flag == 2)
-		i++;
-	j = ft_nb_len(nb) - 1 + i;
-	while (i < j / 2 + 1)
-	{
-		back = out[i];
-		out[i] = out[j - i];
-		out[j - i] = back;
-		i++;
-	}
-	out[ft_nb_len(nb) + flag] = '\0';
-	return (out);
+	else
+		return (0);
 }
 
 char		*ft_itoa(int n)
 {
-	int		flag;
+	int		size;
+	int		sign;
 	char	*out;
 
-	flag = 0;
-	if (n < 0)
-		flag = 1;
-	if (n == -2147483648)
-		flag = 2;
-	if (!(out = (char*)malloc(sizeof(char) * (ft_nb_len(n) + flag + 1))))
+	if (n == -2147483647 - 1)
+		return (ft_strdup("-2147483648"));
+	sign = ft_sign(&n);
+	size = ft_nb_len(n) + sign;
+	if (!(out = (char*)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	if (n == 0)
+	out[size] = '\0';
+	while (size--)
 	{
-		out[0] = '0';
-		out[1] = '\0';
-		return (out);
+		out[size] = n % 10 + 48;
+		n /= 10;
 	}
-	ft_print(out, n, flag);
-	ft_strrev_nb(n, flag, out);
+	if (sign == 1)
+		out[0] = '-';
 	return (out);
 }

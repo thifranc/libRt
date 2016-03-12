@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_char.c                                      :+:      :+:    :+:   */
+/*   ft_putnb_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/11 17:05:26 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 15:26:54 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/12 14:53:24 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/12 15:21:38 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_get_char(char *s, char c)
+void	ft_putnb_base(int n, char *base)
 {
-	int	i;
-
-	i = 0;
-	if (s == NULL)
-		return (-1);
-	while (s[i] && s[i] == c)
-		i++;
-	if (s[i] == c)
-		return (i);
-	return (-1);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnb_base(-n, base);
+	}
+	else if (0 <= n && (size_t)n <= ft_strlen(base))
+		ft_putchar(base[n]);
+	else
+	{
+		ft_putnb_base(n / ft_strlen(base), base);
+		ft_putnb_base(n % ft_strlen(base), base);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 14:53:27 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 10:40:58 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/03/12 11:30:59 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t nb)
 	{
 		j = 0;
 		k = i;
-		while (s1[i] == s2[j] && s2[j] && s1[j])
+		while (s1[i] == s2[j] && s2[j] && s1[j] && i < nb)
 		{
 			i++;
 			j++;

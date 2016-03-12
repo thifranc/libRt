@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_char.c                                      :+:      :+:    :+:   */
+/*   ft_base_10.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/11 17:05:26 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 15:26:54 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/12 15:29:20 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/12 15:34:39 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_get_char(char *s, char c)
+int		ft_base_10(char *str, char *base)
 {
 	int	i;
+	int	n;
+	int	out;
 
 	i = 0;
-	if (s == NULL)
-		return (-1);
-	while (s[i] && s[i] == c)
+	out = 0;
+	while (str[i])
+	{
+		n = 0;
+		while (base[n] != str[i] && base[n])
+			n++;
+		if (base[n] == '\0')
+			return (-1);
+		out = out * (int)ft_strlen(base) + n;
 		i++;
-	if (s[i] == c)
-		return (i);
-	return (-1);
+	}
+	return (out);
 }

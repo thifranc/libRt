@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 11:01:27 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/03/12 16:14:15 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_atoi(char *str);
+int					ft_base_10(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
 int					ft_get_char(char *s, char c);
 int					ft_isalnum(int c);
@@ -33,7 +34,6 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
-void				ft_list_push_back(t_list **begin_list, int flag);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -50,11 +50,13 @@ void				ft_memdel(void **ap);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *s1, int c, size_t len);
 int					ft_min(int *tab, int size);
+int					ft_nb_len_base(int n, int base);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char d, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
+void				ft_putnb_base(int n, char *base);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
