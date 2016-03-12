@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_get_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/15 10:18:21 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 10:27:03 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/11 17:05:26 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/11 17:07:02 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memalloc(size_t size)
+int		ft_get_char(char *s, char c)
 {
-	void	*lol;
+	int	i;
 
-	if (!(lol = (void*)malloc(size)))
-		return (NULL);
-	if (size == 0)
-		return (NULL);
-	ft_bzero(lol, size);
-	return (lol);
+	i = 0;
+	if (s == NULL)
+		return (-1);
+	while (s[i] && s[i] == c)
+		i++;
+	if (s[i] == c)
+		return (i);
+	return (-1);
 }

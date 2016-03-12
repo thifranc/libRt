@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/15 10:18:21 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 10:27:03 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/12 10:45:42 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/12 10:46:28 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_tri_push_back(t_tri **begin_list, int flag)
 {
-	void	*lol;
+	t_tri	*tmp;
 
-	if (!(lol = (void*)malloc(size)))
-		return (NULL);
-	if (size == 0)
-		return (NULL);
-	ft_bzero(lol, size);
-	return (lol);
+	if (*begin_list == NULL)
+		*begin_list = ft_create_elem();
+	else if (((*begin_list)->next) == NULL)
+	{
+		(*begin_list)->next = ft_create_elem();
+		tmp = (*begin_list)->next;
+		if (flag == 1)
+			tmp->prev = *begin_list;
+	}
+	else
+		ft_tri_push_back(&((*begin_list)->next));
 }

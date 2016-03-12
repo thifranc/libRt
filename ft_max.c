@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/15 10:18:21 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 10:27:03 by thifranc         ###   ########.fr       */
+/*   Created: 2016/03/12 10:41:31 by thifranc          #+#    #+#             */
+/*   Updated: 2016/03/12 10:43:54 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_max(int *tab, int size)
 {
-	void	*lol;
+	int	max;
+	int	i;
 
-	if (!(lol = (void*)malloc(size)))
-		return (NULL);
-	if (size == 0)
-		return (NULL);
-	ft_bzero(lol, size);
-	return (lol);
+	i = 1;
+	max = tab[0];
+	while (i < size)
+	{
+		if (max < tab[i])
+			max = tab[i];
+		i++;
+	}
+	return (max);
 }
+
