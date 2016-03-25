@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/11 17:05:26 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 15:26:54 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/03/25 13:01:30 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_get_char(char *s, char c)
 	i = 0;
 	if (s == NULL)
 		return (-1);
-	while (s[i] && s[i] == c)
+	while (s[i] && s[i] != c)
 		i++;
 	if (s[i] == c)
 		return (i);
