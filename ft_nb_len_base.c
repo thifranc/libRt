@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/12 16:10:29 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/12 16:13:36 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/03/31 11:37:18 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_nb_len_base(int n, int base)
 {
-	if (0 <= n && n <= base)
+	if (0 <= n && n < base)
 		return (1);
 	else
 		return (1 + ft_nb_len_base(n / base, base));
