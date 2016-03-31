@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/03/31 11:38:25 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/03/31 11:40:56 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int					ft_atoi(char *str);
 int					ft_base_10(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
 int					ft_get_char(char *s, char c);
+int					ft_higher(int a, int b);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -52,6 +53,7 @@ void				*ft_memset(void *s1, int c, size_t len);
 int					ft_min(int *tab, int size);
 int					ft_nb_len_base(int n, int base);
 int					ft_power(int nb, int power);
+void				ft_print_n_char(char c, int n);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char d, int fd);
 void				ft_putendl(char const *s);
