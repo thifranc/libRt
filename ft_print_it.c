@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/13 11:50:27 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/23 16:27:25 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/23 16:35:01 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	*get_till_opt(char **str)
 	return (out);
 }
 
-char	*print_it(char *str, ...)
+char	*ft_print_it(char *str, ...)
 {
 	va_list	va;
 	char	*out;
