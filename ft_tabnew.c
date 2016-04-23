@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tabnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: thifranc <thifranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/14 11:34:52 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/14 15:37:40 by thifranc         ###   ########.fr       */
+/*   Created: 2016/04/18 12:57:07 by thifranc          #+#    #+#             */
+/*   Updated: 2016/04/18 12:57:57 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *c)
+void	ft_tabnew(int *tab, int size)
 {
-	size_t	i;
+	int		i;
 
 	i = 0;
-	while (c && c[i])
-		i++;
-	return (i);
+	while (i < size)
+		tab[i++] = 0;
 }

@@ -6,18 +6,29 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/14 12:30:55 by thifranc          #+#    #+#             */
-/*   Updated: 2016/02/20 16:28:36 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/16 10:00:46 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strdup(const char *str)
 {
 	char	*out;
+	int		i;
 
-	if (!(out = (char*)malloc(sizeof(char) * ft_strlen(str) + 1)))
+	i = 0;
+	while (str && str[i])
+		i++;
+	if (!(out = (char*)malloc(sizeof(char) * i + 1)))
 		return (NULL);
-	ft_strcpy(out, str);
+	if (str)
+	{
+		ft_strcpy(out, str);
+//		ft_memdel((void*)&str);
+	}
+	else
+		*out = '\0';
 	return (out);
 }

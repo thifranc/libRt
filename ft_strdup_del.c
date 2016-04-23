@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_del.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: thifranc <thifranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/14 11:34:52 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/14 15:37:40 by thifranc         ###   ########.fr       */
+/*   Created: 2016/04/18 17:18:02 by thifranc          #+#    #+#             */
+/*   Updated: 2016/04/18 17:24:56 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+char	*ft_strdup_del(const char *str)
 {
-	size_t	i;
+	char	*out;
+	int		i;
 
 	i = 0;
-	while (c && c[i])
+	while (str && str[i])
 		i++;
-	return (i);
+	if (!(out = (char*)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	if (str)
+	{
+		ft_strcpy(out, str);
+		ft_memdel((void*)&str);
+	}
+	else
+		*out = '\0';
+	return (out);
 }
