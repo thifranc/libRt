@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/05 17:42:57 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/18 17:27:01 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct		s_lol
 {
 	void			*content;
 	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+	struct s_lol	*next;
+}					t_lol;
 
 int					ft_atoi(char *str);
 int					ft_base_10(char *str, char *base);
@@ -36,12 +36,12 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
 int					ft_lower(int a, int b);
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstadd(t_lol **alst, t_lol *new);
+void				ft_lstdel(t_lol **alst, void (*del)(void *, size_t));
+void				ft_lstdelone(t_lol **alst, void (*del)(void *, size_t));
+void				ft_lstiter(t_lol *lst, void (*f)(t_lol *elem));
+t_lol				*ft_lstmap(t_lol *lst, t_lol *(*f)(t_lol *elem));
+t_lol				*ft_lstnew(void const *content, size_t content_size);
 int					ft_max(int *tab, int size);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -52,6 +52,7 @@ void				ft_memdel(void **ap);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *s1, int c, size_t len);
 int					ft_min(int *tab, int size);
+int					ft_nblen(int n);
 int					ft_nb_len_base(int n, int base);
 int					ft_power(int nb, int power);
 void				ft_print_n_char(char c, int n);
@@ -72,10 +73,12 @@ int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strcpy(char *s1, const char *s2);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *str);
+char				*ft_strdup_del(const char *str);
 int					ft_strequ(char const *s1, char const *s2);
 void				ft_striter(char *s, void (*f)(char *c));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin_del(char const *s1, char const *s2, int del);
 size_t				ft_strlen(const char *c);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -90,6 +93,7 @@ char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
+void				ft_tabnew(int *tab, int size);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 
