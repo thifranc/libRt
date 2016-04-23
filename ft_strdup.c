@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/14 12:30:55 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/16 10:00:46 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/23 16:23:55 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strdup(const char *str)
 	if (str)
 	{
 		ft_strcpy(out, str);
-//		ft_memdel((void*)&str);
 	}
 	else
 		*out = '\0';
