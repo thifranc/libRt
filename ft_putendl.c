@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 09:16:49 by thifranc          #+#    #+#             */
-/*   Updated: 2016/02/20 16:27:58 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/28 11:33:34 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	ft_putendl(char const *s)
 {
-	int i;
+	char	*out;
+	int		len;
 
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
+	len = ft_strlen(s);
+	if (!(out = (char*)malloc(sizeof(char) * (len + 2))))
+		return ;
+	ft_strcpy(out, s);
+	out[len] = '\n';
+	out[len + 1] = '\0';
+	write(1, out, len + 2);
+	ft_memdel((void**)&out);
 }
