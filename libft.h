@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/23 16:36:22 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/29 18:10:11 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct		s_lol
 int					ft_atoi(char *str);
 int					ft_base_10(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
+void				ft_deltab(void **data);
 int					ft_get_char(char *s, char c);
 int					ft_gnl(int fd, char **line);
 int					ft_higher(int a, int b);
