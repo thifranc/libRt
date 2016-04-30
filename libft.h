@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/30 10:44:40 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/30 10:55:30 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 typedef struct		s_lol
 {
 	void			*content;
-	char			*path;
 	size_t			content_size;
 	struct s_lol	*next;
 }					t_lol;
