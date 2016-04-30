@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/29 18:10:11 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/04/30 10:44:40 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct		s_lol
 {
 	void			*content;
+	char			*path;
 	size_t			content_size;
 	struct s_lol	*next;
 }					t_lol;
@@ -63,7 +64,7 @@ int					ft_nblen(int n);
 int					ft_nb_len_base(int n, int base);
 int					ft_power(int nb, int power);
 void				ft_print_n_char(char c, int n);
-char				*ft_print_it(char *str, ...);
+char				*ft_ptrf(char *str, ...);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char d, int fd);
 void				ft_putendl(char const *s);
