@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/30 11:06:16 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/05/01 14:57:57 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ void				ft_swap(void **a, void **b);
 void				ft_tabnew(int *tab, int size);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+void				ft_write_fd(char *str, int fd);
 
 #endif
