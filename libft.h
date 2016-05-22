@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/05/01 14:57:57 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/05/20 17:53:49 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void				ft_lstdelone(t_lol **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_lol *lst, void (*f)(t_lol *elem));
 t_lol				*ft_lstmap(t_lol *lst, t_lol *(*f)(t_lol *elem));
 t_lol				*ft_lstnew(void const *content, size_t content_size);
-int					ft_max(int *tab, int size);
+int					ft_max(int *itab, int size);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -59,7 +59,7 @@ void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				ft_memdel(void **ap);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *s1, int c, size_t len);
-int					ft_min(int *tab, int size);
+int					ft_min(int *itab, int size);
 int					ft_nblen(int n);
 int					ft_nb_len_base(int n, int base);
 int					ft_power(int nb, int power);
@@ -104,7 +104,7 @@ char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 void				ft_swap(void **a, void **b);
-void				ft_tabnew(int *tab, int size);
+void				ft_tabnew(int *itab, int size);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_write_fd(char *str, int fd);
