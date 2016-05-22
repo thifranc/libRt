@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/05/20 17:53:49 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:37:33 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int					ft_atoi(char *str);
 int					ft_base_10(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
 void				ft_deltab(void **data);
+void				ft_exiting(char *msg);
 int					ft_get_char(char *s, char c);
 int					ft_gnl(int fd, char **line);
 int					ft_higher(int a, int b);
