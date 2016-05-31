@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/05/22 17:37:33 by thifranc         ###   ########.fr       */
+/*   Updated: 2016/05/31 10:36:34 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct		s_lol
 	struct s_lol	*next;
 }					t_lol;
 
+int					ft_abs(int nb);
 int					ft_atoi(char *str);
 int					ft_base_10(char *str, char *base);
 void				ft_bzero(void *s, size_t n);
