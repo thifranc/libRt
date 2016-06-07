@@ -6,7 +6,7 @@
 #    By: thifranc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 19:24:34 by thifranc          #+#    #+#              #
-#    Updated: 2016/05/31 10:36:09 by thifranc         ###   ########.fr        #
+#    Updated: 2016/06/07 13:00:42 by thifranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC = atoi itoa ptrf\
 			tabnew\
 			strdup_del strjoin_del deltab\
 			gnl swap realloc\
-			exiting abs
+			exiting abs get_rank
 
 SRC:= $(addprefix ft_, $(SRC))
 SRC:= $(addsuffix .c, $(SRC))
