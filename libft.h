@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2016/06/07 13:02:48 by thifranc         ###   ########.fr       */
+/*   Updated: 2017/10/24 13:45:06 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *s1, int c, size_t len);
 int					ft_min(int *itab, int size);
 int					ft_nblen(int n);
-int					ft_nb_len_base(int n, int base);
+int					ft_nb_len_base(long long int n, int base);
 int					ft_power(int nb, int power);
 void				ft_print_n_char(char c, int n);
 char				*ft_ptrf(char *str, ...);

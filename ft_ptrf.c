@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/13 11:50:27 by thifranc          #+#    #+#             */
-/*   Updated: 2016/04/30 10:43:49 by thifranc         ###   ########.fr       */
+/*   Updated: 2017/10/24 14:09:08 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,36 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define LEFT_PADDING 1
+#define ZERO_FILL 2
+#define HEXA 4
+#define PADDING 8
+
 char	*do_nb(int opt, int max, va_list va)
 {
-	char	*out;
-	int		arg;
-	int		i;
+	char				*out;
+	long long int		arg;
+	int					i;
+	int					base;
+	char				*base_str;
 
 	i = 0;
-	arg = va_arg(va, int);
-	max = max ? max : ft_nb_len_base(arg, 10);
+	base = opt & HEXA ? 16 : 10;
+	base_str = opt & HEXA ? "0123456789abcdef" : "0123456789";
+	arg = va_arg(va, long long int);
+	max = opt & PADDING ? va_arg(va, int) : ft_nb_len_base(arg, base);
 	if (!(out = malloc(max + 1)))
 		return (NULL);
 	out[max] = '\0';
 	while (i < max)
-		out[i++] = ' ';
-	i = opt ? ft_nb_len_base(arg, 10) : max;
+		out[i++] = opt & ZERO_FILL ? '0' : ' ';
+	i = opt & LEFT_PADDING ? ft_nb_len_base(arg, base) : max;
 	if (arg == 0)
 		out[--i] = '0';
 	while (arg)
 	{
-		out[--i] = arg % 10 + 48;
-		arg /= 10;
+		out[--i] = base_str[arg % base];
+		arg /= base;
 	}
 	return (out);
 }
@@ -50,13 +59,13 @@ char	*do_string(int opt, int max, va_list va)
 	i = 0;
 	arg = va_arg(va, char *);
 	len = ft_strlen(arg);
-	max = max ? max : len;
+	max = opt & PADDING ? va_arg(va, int) : len;
 	if (!(out = malloc(max + 1)))
 		return (NULL);
 	out[max] = '\0';
 	while (i < max)
-		out[i++] = ' ';
-	i = opt ? len : max;
+		out[i++] = opt & ZERO_FILL ? '0' : ' ';
+	i = opt & LEFT_PADDING ? len : max;
 	while (len > 0)
 		out[--i] = arg[--len];
 	return (out);
@@ -70,18 +79,23 @@ char	*get_opt_and_arg(char **s, va_list va)
 	opt = 0;
 	max = 0;
 	(*s)++;
-	if (**s == '-')
+	while (**s != 's' && **s != 'x' && **s != 'd')
 	{
-		opt = 1;
-		(*s)++;
-	}
-	if (**s == '*')
-	{
-		max = va_arg(va, int);
+		if (**s == '-')
+			opt |= LEFT_PADDING;
+		if (**s == '0')
+			opt |= ZERO_FILL;
+		if (**s == '*')
+			opt |= PADDING;
 		(*s)++;
 	}
 	if (**s == 's')
 		return (do_string(opt, max, va));
+	else if (**s == 'x')
+	{
+		opt |= HEXA;
+		return (do_nb(opt, max, va));
+	}
 	else
 		return (do_nb(opt, max, va));
 }
@@ -106,7 +120,7 @@ char	*get_till_opt(char **str)
 	return (out);
 }
 
-char	*ft_prtf(char *str, ...)
+char	*ft_ptrf(char *str, ...)
 {
 	va_list	va;
 	char	*out;
