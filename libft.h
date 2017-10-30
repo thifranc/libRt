@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2017/10/24 13:45:06 by thifranc         ###   ########.fr       */
+/*   Updated: 2017/10/30 17:14:52 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s1, int c);
 void				ft_strclr(char *s);
 int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strcmpi(const char *s1, const char *s2);
 char				*ft_strcpy(char *s1, const char *s2);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *str);
