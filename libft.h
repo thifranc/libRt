@@ -6,7 +6,7 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 10:07:41 by thifranc          #+#    #+#             */
-/*   Updated: 2017/10/30 17:14:52 by thifranc         ###   ########.fr       */
+/*   Updated: 2017/11/28 19:22:00 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void				ft_putnb_base(int n, char *base);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
+void				ft_putstrdel(char const *s);
 char				**ft_realloc(char **var, int add, int del);
 char				*ft_strcat(char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
@@ -109,6 +110,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 void				ft_swap(void **a, void **b);
 void				ft_tabnew(int *itab, int size);
+char				*ft_strlower(char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_write_fd(char *str, int fd);

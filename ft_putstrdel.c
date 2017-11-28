@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmpi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/14 11:35:35 by thifranc          #+#    #+#             */
-/*   Updated: 2017/10/30 17:21:11 by thifranc         ###   ########.fr       */
+/*   Created: 2016/02/16 09:14:52 by thifranc          #+#    #+#             */
+/*   Updated: 2017/11/28 19:38:28 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmpi(const char *s1, const char *s2)
+void	ft_putstrdel(char const *s)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s1[i] && ft_tolower(s1[i]) == ft_tolower(s2[i]) )
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	write(1, s, ft_strlen(s));
+	free((void *)s);
+	s = NULL;
 }

@@ -6,7 +6,7 @@
 #    By: thifranc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 19:24:34 by thifranc          #+#    #+#              #
-#    Updated: 2017/10/19 11:07:09 by thifranc         ###   ########.fr        #
+#    Updated: 2017/11/28 19:22:00 by thifranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,17 @@ SRC = atoi itoa ptrf\
 			memalloc bzero memccpy memchr memset\
 			memmove memcmp memcpy memdel\
 			putnb_base putendl putendl_fd\
-			putnbr putnbr_fd putstr putstr_fd\
+			putnbr putnbr_fd putstr putstr_fd putstrdel\
 			putchar putchar_fd write_fd\
 			strcat striter strncpy strtrim\
 			strchr striteri strnequ\
 			strlcat strclr strjoin strnew\
-			strcmp strlen strnstr\
+			strcmpi strcmp strlen strnstr\
 			strcpy strmap strrchr\
 			strdel strmapi strsplit\
 			strdup strncat strstr\
 			strequ strncmp strsub\
-			tolower isalnum toupper isalpha\
+			strlower tolower isalnum toupper isalpha\
 			isascii isdigit isprint\
 			lstadd lstnew lstdelone lstiter lstmap lstdel\
 			get_char\
