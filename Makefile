@@ -6,7 +6,7 @@
 #    By: thifranc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/04 19:24:34 by thifranc          #+#    #+#              #
-#    Updated: 2017/11/28 19:22:00 by thifranc         ###   ########.fr        #
+#    Updated: 2017/11/30 15:25:06 by thifranc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ all: $(NAME)
 $(NAME):
 	@gcc -c $(FLAGS) $(SRC)
 	@ar rc $(NAME) $(OBJ)
-	make clean
 
 clean :
 	@/bin/rm -f $(OBJ)
