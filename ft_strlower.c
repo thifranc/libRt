@@ -6,13 +6,13 @@
 /*   By: thifranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 17:23:15 by thifranc          #+#    #+#             */
-/*   Updated: 2017/10/30 17:38:43 by thifranc         ###   ########.fr       */
+/*   Updated: 2017/12/02 12:51:41 by thifranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strlower(char *s)
+char	*ft_strlower(char *s)
 {
 	int	i;
 
